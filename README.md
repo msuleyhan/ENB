@@ -57,3 +57,12 @@ While writing the code for this game, we also created some learning tools and ga
 - Code for the game (in this repo)
 - The holder that holds the phone on top of the microscope [here's the link](https://www.thingiverse.com/thing:3384088)
 - A case for the euglena and LED lights (to minimize outside light)
+
+
+# Overveiw
+- Everything works together and there is a basic game  ✅
+- Basic documentation ✅
+- Small video / gif of the gameplay ✅
+- Documentation is on github ✅
+- Something extra has been tried  (physical or coding) ✅
+- Found godtier phone mount for the microscope ✅
