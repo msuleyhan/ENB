@@ -2,7 +2,7 @@
 
 ## Team Members:
 - Suleyman Hanyyev
-- Anja Stijpovic
+- Anja Stijepovic
 - Maria Petropoulos
 - Leo Villemin
 
