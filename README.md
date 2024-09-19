@@ -46,7 +46,7 @@ While writing the code for this game, we also created some learning tools and ga
     - rectangleAroundFace.py
  - arduino/
  - images_project_progress/
- - videos/
+ - projectvideos.py
 
 ## Important Components
 - Euglena
