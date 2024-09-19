@@ -45,7 +45,7 @@ While writing the code for this game, we also created some learning tools and ga
  - learning/
     - rectangleAroundFace.py
  - arduino/
- - pictures/
+ - images_project_progress/
  - videos/
 
 ## Important Components
