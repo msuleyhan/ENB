@@ -25,7 +25,7 @@ detector = cv2.SimpleBlobDetector_create(params)
 
 # Timing and states
 initial_detection_time = 10  # seconds
-game_duration = 60  # seconds
+game_duration = 30  # seconds
 result_display_duration = 10  # seconds
 start_time = time.time()
 last_state_change = time.time()
@@ -74,7 +74,7 @@ while True:
         keypoints = detector.detect(gray)
         initial_keypoints = keypoints
         paths = {kp.pt: [kp.pt] for kp in keypoints}
-        print(f"Detecting... {len(keypoints)} bacteria detected.")
+        print(f"Detecting... {len(keypoints)} euglena detected.")
     elif game_state == 'detecting' and elapsed_time > initial_detection_time:
         game_state = 'tracking'
         last_state_change = current_time
@@ -84,7 +84,7 @@ while True:
         game_state = 'show_result'
         last_state_change = current_time
         region_count = sum(1 for path in paths.values() if is_in_target_region(path[-1], target_region, 500, 500))
-        print(f"Bacteria in {target_region}: {region_count}")
+        print(f"euglena in {target_region} zone: {region_count}")
     elif game_state == 'show_result' and current_time - last_state_change > result_display_duration:
         game_state = 'tracking'
         last_state_change = current_time
@@ -114,13 +114,14 @@ while True:
     if game_state == 'tracking':
         cv2.putText(frame, f"Time left: {int(game_duration - (current_time - last_state_change))}s", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
     elif game_state == 'show_result':
-        cv2.putText(frame, f"Bacteria in {target_region}: {region_count}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
+        cv2.putText(frame, f"Euglena in {target_region} zone: {region_count}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 0, 0), 2)
 
     # Show the image
-    cv2.imshow('Bacteria Tracking Game', frame)
+    cv2.imshow('ENB', frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 # Clean up
 cap.release()
 cv2.destroyAllWindows()
+
